@@ -3,8 +3,12 @@ package com.example.pertemuan6.view
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
@@ -73,6 +77,32 @@ fun FormIsian(
                         Text(text = item)
                     }
                 }
+            }
+
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(all = dimensionResource(id = R.dimen.padding_small))
+                    .width(250.dp),
+                thickness = dimensionResource(id = R.dimen.pthickness_divider)
+            )
+
+            OutlinedTextField(
+                value = "",
+                singleLine = true,
+                modifier = Modifier.width(250.dp),
+                label = { Text(text = stringResource(id = R.string.alamat)) },
+                onValueChange = {},
+            )
+
+            Spacer(modifier = Modifier.height(30.dp))
+
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth(fraction = 1f)
+                    .padding(all = 25.dp),
+                onClick = OnSubmitBtnClick
+            ) {
+                Text(stringResource(id = R.string.submit))
             }
         }
     }
